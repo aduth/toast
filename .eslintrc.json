@@ -2,7 +2,8 @@
 	"root": true,
 	"parser": "babel-eslint",
 	"env": {
-		"node": true
+		"node": true,
+		"browser": true
 	},
 	"rules": {
 		"array-bracket-spacing": [ 2, "always" ],
