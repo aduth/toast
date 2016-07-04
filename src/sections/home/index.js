@@ -3,6 +3,16 @@
  */
 import { h } from 'preact';
 
+/**
+ * Internal dependencies
+ */
+import DocumentHead from 'components/document-head';
+
 export default function() {
-	return <div>Home</div>;
+	return (
+		<div>
+			<DocumentHead title="" />
+			Home
+		</div>
+	);
 }
