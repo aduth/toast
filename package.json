@@ -1,0 +1,44 @@
+{
+  "name": "toast",
+  "version": "1.0.0",
+  "description": "A collaborative pin board for sharing ideas",
+  "scripts": {
+    "build:dev": "webpack --config webpack.config.dev",
+    "build:prod": "NODE_ENV=production webpack --config webpack.config.prod",
+    "dev": "npm run build:dev && node webpack.server"
+  },
+  "author": {
+    "name": "Andrew Duthie",
+    "email": "andrew@andrewduthie.com",
+    "url": "http://www.andrewduthie.com/"
+  },
+  "license": "GPL-2.0+",
+  "devDependencies": {
+    "babel-eslint": "^6.1.0",
+    "babel-loader": "^6.2.4",
+    "babel-plugin-syntax-jsx": "^6.8.0",
+    "babel-plugin-transform-imports": "^1.1.0",
+    "babel-plugin-transform-react-jsx": "^6.8.0",
+    "babel-preset-es2015-native-modules": "^6.6.0",
+    "babel-preset-stage-1": "^6.5.0",
+    "css-loader": "^0.23.1",
+    "eslint": "^3.0.0",
+    "eslint-plugin-react": "^5.2.2",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "lodash": "^4.13.1",
+    "node-sass": "^3.8.0",
+    "postcss-loader": "^0.9.1",
+    "preact": "^5.1.0-beta.20",
+    "preact-compat": "^1.9.0",
+    "preact-redux": "^1.0.1",
+    "raw-loader": "^0.5.1",
+    "react-hot-loader": "^3.0.0-beta.1",
+    "redux": "^3.5.2",
+    "redux-routing": "^0.3.1",
+    "sass-loader": "^4.0.0",
+    "style-loader": "^0.13.1",
+    "webpack": "^2.1.0-beta.15",
+    "webpack-dev-server": "^2.1.0-beta.0",
+    "whatwg-fetch": "^1.0.0"
+  }
+}
