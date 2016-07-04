@@ -1,5 +1,11 @@
 <?php
 
+function toast_after_theme_setup() {
+	add_theme_support( 'title-tag' );
+	add_theme_support( 'html5' );
+}
+add_action( 'after_setup_theme', 'toast_after_theme_setup' );
+
 function toast_enqueue_scripts() {
 	$is_dev = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG;
 	$asset_base = get_template_directory_uri() . '/dist';
