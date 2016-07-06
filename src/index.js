@@ -19,10 +19,18 @@ const node = document.getElementById( 'app' );
 const store = configureStore();
 store.dispatch( navigate( window.location.href ) );
 
+/**
+ * Render
+ */
+
 function initialize() {
 	render( <Root store={ store } />, node, node.lastChild );
 }
 initialize();
+
+/**
+ * Hot reloading
+ */
 
 if ( module.hot ) {
 	module.hot.accept( 'layout/root', initialize );
