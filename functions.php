@@ -73,7 +73,8 @@ function toast_enqueue_scripts() {
 	wp_enqueue_script( 'toast-bundle', $script, null, null, true );
 	wp_localize_script( 'toast-bundle', 'toast', array(
 		'site' => array(
-			'name' => get_bloginfo( 'name', 'display' )
+			'name' => get_bloginfo( 'name', 'display' ),
+			'restUrl' => get_rest_url()
 		)
 	) );
 
