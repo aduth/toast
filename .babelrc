@@ -5,6 +5,7 @@
 	],
 	"plugins": [
 		"react-hot-loader/babel",
+		"transform-runtime",
 		"syntax-jsx",
 		[
 			"transform-react-jsx",
