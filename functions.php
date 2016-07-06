@@ -32,7 +32,8 @@ function toast_register_post_type() {
 		'hierarchical' => false,
 		'public' => true,
 		'menu_icon' => 'dashicons-image-filter',
-		'show_in_rest' => true
+		'show_in_rest' => true,
+		'rest_base' => 'crumbs'
 	) );
 
 	register_taxonomy( 'crumb_tag', 'crumb', array(
