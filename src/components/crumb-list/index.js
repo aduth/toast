@@ -10,13 +10,14 @@ import { map } from 'lodash';
  */
 import { getCrumbs } from 'state/selectors';
 import QueryCrumbs from 'components/query-crumbs';
+import Crumb from 'components/crumb';
 
 function CrumbList( { crumbs } ) {
 	return (
 		<ul className="crumb-list">
 			<QueryCrumbs />
-			{ map( crumbs, ( { id, title } ) => (
-				<li key={ id }>{ title.rendered }</li>
+			{ map( crumbs, ( { id } ) => (
+				<li key={ id }><Crumb id={ id } /></li>
 			) ) }
 		</ul>
 	);
