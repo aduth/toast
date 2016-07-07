@@ -80,6 +80,7 @@ function toast_enqueue_scripts() {
 	) );
 
 	// Styles
+	wp_enqueue_style( 'toast-fonts', 'https://fonts.googleapis.com/css?family=Merriweather:400,700,700italic|Open+Sans:400,400italic,700,700italic' );
 	if ( ! $is_dev ) {
 		wp_enqueue_style( 'toast-styles', $theme_dir . '/dist/app.min.css' );
 	}

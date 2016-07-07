@@ -10,9 +10,24 @@ html {
 }
 
 body {
+	@include sans;
 	margin: 0;
 	padding: 0;
 	font-size: 100%;
 	line-height: 1.6;
+	color: $font-color-body;
 	-webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	@include serif;
+}
+
+a {
+	text-decoration: none;
 }
