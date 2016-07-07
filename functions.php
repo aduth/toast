@@ -53,6 +53,7 @@ function toast_register_post_type() {
 		),
 		'public' => true,
 		'rewrite' => array( 'slug' => 'crumb-tag' ),
+		'show_in_rest' => true
 	) );
 }
 add_action( 'init', 'toast_register_post_type' );
