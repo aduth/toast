@@ -3,7 +3,11 @@
  */
 import { h } from 'preact';
 import { connect } from 'preact-redux';
-import { navigate } from 'redux-routing';
+
+/**
+ * Internal dependencies
+ */
+import { navigate } from 'state/route/actions';
 
 function Link( props ) {
 	function onNavigate( event ) {
