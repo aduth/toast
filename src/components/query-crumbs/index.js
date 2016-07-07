@@ -8,7 +8,7 @@ import { connect } from 'preact-redux';
  * Internal dependencies
  */
 import { requestCrumbs } from 'state/crumbs/actions';
-import { isRequestingCrumbs } from 'state/crumbs/selectors';
+import { isRequestingCrumbs } from 'state/selectors';
 
 class QueryCrumbs extends Component {
 	componentWillMount() {

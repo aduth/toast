@@ -8,7 +8,7 @@ import { map } from 'lodash';
 /**
  * Internal dependencies
  */
-import { getCrumbs } from 'state/crumbs/selectors';
+import { getCrumbs } from 'state/selectors';
 import QueryCrumbs from 'components/query-crumbs';
 
 function CrumbList( { crumbs } ) {
