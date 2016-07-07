@@ -6,12 +6,12 @@ import { h } from 'preact';
 /**
  * Internal dependencies
  */
-import Navigation from 'layout/navigation';
+import MasterBar from 'layout/master-bar';
 
 export default function App( { children } ) {
 	return (
 		<main className="app">
-			<Navigation />
+			<MasterBar />
 			{ children }
 		</main>
 	);
