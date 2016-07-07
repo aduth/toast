@@ -7,13 +7,13 @@ import { h } from 'preact';
  * Internal dependencies
  */
 import DocumentHead from 'components/document-head';
-import QueryCrumbs from 'components/query-crumbs';
+import CrumbList from 'components/crumb-list';
 
 export default function() {
 	return (
 		<div>
 			<DocumentHead title="" />
-			<QueryCrumbs />
+			<CrumbList />
 			Home
 		</div>
 	);
