@@ -2,7 +2,7 @@
  * External dependencies
  */
 import { combineReducers } from 'redux';
-import { reduce, mapKeys, camelCase } from 'lodash';
+import { assign, reduce, get } from 'lodash';
 
 /**
  * Internal dependencies
@@ -29,11 +29,17 @@ export function items( state = {}, action ) {
 	switch ( action.type ) {
 		case CRUMBS_RECEIVE:
 			return reduce( action.crumbs, ( memo, crumb ) => {
-				memo[ crumb.id ] = mapKeys( crumb, ( value, key ) => {
-					return camelCase( key );
+				const thumbnail = get( crumb, '_embedded.wp:featuredmedia[0]', {} );
+				return assign( memo, {
+					[ crumb.id ]: {
+						id: crumb.id,
+						title: crumb.title.rendered,
+						thumbnail: {
+							src: thumbnail.source_url
+						},
+						tags: get( crumb, '_embedded.wp:term[0]', [] )
+					}
 				} );
-
-				return memo;
 			}, { ...state } );
 	}
 

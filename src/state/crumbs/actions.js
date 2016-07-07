@@ -18,7 +18,7 @@ export function receiveCrumbs( crumbs ) {
 export function requestCrumbs() {
 	return async ( dispatch ) => {
 		dispatch( { type: CRUMBS_REQUEST } );
-		const body = await fetch( `${ REST_URL }wp/v2/crumbs` );
+		const body = await fetch( `${ REST_URL }wp/v2/crumbs?_embed` );
 		const crumbs = await body.json();
 		dispatch( { type: CRUMBS_REQUEST_SUCCESS } );
 		dispatch( receiveCrumbs( crumbs ) );
