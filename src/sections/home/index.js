@@ -14,7 +14,6 @@ export default function() {
 		<div>
 			<DocumentHead title="" />
 			<CrumbList />
-			Home
 		</div>
 	);
 }
