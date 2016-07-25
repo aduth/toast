@@ -3,6 +3,7 @@
  */
 import { Component } from 'preact';
 import { connect } from 'preact-redux';
+import { isEqual } from 'lodash';
 
 /**
  * Internal dependencies
@@ -12,9 +13,21 @@ import { isRequestingCrumbs } from 'state/selectors';
 
 class QueryCrumbs extends Component {
 	componentWillMount() {
-		if ( ! this.props.requesting ) {
-			this.props.requestCrumbs();
+		this.request( this.props );
+	}
+
+	componentWillReceiveProps( nextProps ) {
+		if ( ! isEqual( this.props.query, nextProps.query ) ) {
+			this.request( nextProps );
 		}
+	}
+
+	request( props ) {
+		if ( props.requesting ) {
+			return;
+		}
+
+		props.requestCrumbs( props.query );
 	}
 
 	render() {
@@ -23,9 +36,9 @@ class QueryCrumbs extends Component {
 }
 
 export default connect(
-	( state ) => {
+	( state, { query } ) => {
 		return {
-			requesting: isRequestingCrumbs( state )
+			requesting: isRequestingCrumbs( state, query )
 		};
 	},
 	{ requestCrumbs }

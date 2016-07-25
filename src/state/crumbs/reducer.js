@@ -2,7 +2,7 @@
  * External dependencies
  */
 import { combineReducers } from 'redux';
-import { assign, reduce, get } from 'lodash';
+import { assign, reduce, get, map } from 'lodash';
 
 /**
  * Internal dependencies
@@ -13,13 +13,15 @@ import {
 	CRUMBS_REQUEST_SUCCESS
 } from 'state/action-types';
 
-export function requestingAll( state = false, action ) {
+export function requestingQuery( state = {}, action ) {
 	switch ( action.type ) {
 		case CRUMBS_REQUEST:
-			return true;
-
 		case CRUMBS_REQUEST_SUCCESS:
-			return false;
+			const { query, type } = action;
+			return {
+				...state,
+				[ JSON.stringify( query ) ]: CRUMBS_REQUEST === type
+			};
 	}
 
 	return state;
@@ -46,7 +48,21 @@ export function items( state = {}, action ) {
 	return state;
 }
 
+export function queries( state = {}, action ) {
+	switch ( action.type ) {
+		case CRUMBS_REQUEST_SUCCESS:
+			const { query, crumbs } = action;
+			return {
+				...state,
+				[ JSON.stringify( query ) ]: map( crumbs, 'id' )
+			};
+	}
+
+	return state;
+}
+
 export default combineReducers( {
-	requestingAll,
-	items
+	requestingQuery,
+	items,
+	queries
 } );

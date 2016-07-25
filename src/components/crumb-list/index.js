@@ -12,10 +12,10 @@ import { getCrumbs } from 'state/selectors';
 import QueryCrumbs from 'components/query-crumbs';
 import Crumb from 'components/crumb';
 
-function CrumbList( { crumbs } ) {
+function CrumbList( { crumbs, query } ) {
 	return (
 		<ul className="crumb-list">
-			<QueryCrumbs />
+			<QueryCrumbs query={ query } />
 			{ map( crumbs, ( { id } ) => (
 				<li key={ id }><Crumb id={ id } /></li>
 			) ) }
@@ -23,8 +23,8 @@ function CrumbList( { crumbs } ) {
 	);
 }
 
-export default connect( ( state ) => {
+export default connect( ( state, { query } ) => {
 	return {
-		crumbs: getCrumbs( state )
+		crumbs: getCrumbs( state, query )
 	};
 } )( CrumbList );

@@ -1,3 +1,3 @@
-export default function isRequestingCrumbs( state ) {
-	return state.crumbs.requestingAll;
+export default function isRequestingCrumbs( state, query = {} ) {
+	return state.crumbs.requestingQuery[ JSON.stringify( query ) ];
 }
