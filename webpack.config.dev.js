@@ -11,7 +11,6 @@ var common = require( './webpack.config.common' );
 
 module.exports = merge( common, {
 	entry: [
-		'react-hot-loader/patch',
 		'webpack-dev-server/client?http://localhost:3000',
 		'webpack/hot/only-dev-server'
 	].concat( common.entry ),
