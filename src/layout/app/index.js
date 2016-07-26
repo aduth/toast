@@ -12,7 +12,9 @@ export default function App( { children } ) {
 	return (
 		<main className="app">
 			<MasterBar />
-			{ children }
+			<div className="app__content">
+				{ children }
+			</div>
 		</main>
 	);
 }

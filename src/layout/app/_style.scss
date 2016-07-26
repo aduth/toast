@@ -1,3 +1,7 @@
 .app {
 	padding-top: 70px;
 }
+
+.app__content {
+	@include container;
+}
