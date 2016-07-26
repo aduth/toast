@@ -1,0 +1,16 @@
+.master-bar {
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+}
+
+.master-bar__search {
+	outline: none;
+	display: block;
+	width: 100%;
+	border-width: 0;
+	border-bottom-width: 1px;
+	border-color: #ccc;
+	padding: 16px 8px;
+}

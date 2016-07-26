@@ -41,7 +41,9 @@ class MasterBar extends Component {
 					<input
 						type="search"
 						onChange={ this.setSearchValue }
-						value={ this.state.search } />
+						value={ this.state.search }
+						placeholder="Search…"
+						className="master-bar__search" />
 				</form>
 			</header>
 		);
