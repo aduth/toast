@@ -16,8 +16,8 @@
   "devDependencies": {
     "babel-eslint": "^6.1.0",
     "babel-loader": "^6.2.4",
+    "babel-plugin-lodash": "^3.2.6",
     "babel-plugin-syntax-jsx": "^6.8.0",
-    "babel-plugin-transform-imports": "^1.1.0",
     "babel-plugin-transform-react-jsx": "^6.8.0",
     "babel-plugin-transform-runtime": "^6.9.0",
     "babel-preset-es2015-native-modules": "^6.6.0",

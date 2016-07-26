@@ -4,19 +4,12 @@
 		"stage-1"
 	],
 	"plugins": [
+		"lodash",
 		"transform-runtime",
 		"syntax-jsx",
 		[
 			"transform-react-jsx",
 			{ "pragma": "h" }
-		],
-		[
-			"transform-imports",
-			{
-				"lodash": {
-					"transform": "lodash/${member}"
-				}
-			}
 		]
 	]
 }
